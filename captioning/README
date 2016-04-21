@@ -1,0 +1,12 @@
+============================
+Linjie Yang
+04/21/2016
+============================
+This folder mainly includes the preprocessing code for the web image-caption data. The preprocessingincludes these steps: removing abstract images using image keywords, removing corrupted images, removing images with noisy captions (with location tags) and purify captions, split data into train and validation set.
+The Python functions should also be processed in this order.
+(1) split_keywords.py: preprocess the keywords by splitting words into a list for each image.
+(2) filter_abstract_images.py: removing abstract images using keywords extracted from image names.
+(3) remove_invalid_images.py: remove corrupted images
+(4) caption_filter_batch.py: removing images with noisy captions, also purify captions and keep only one sentence in one caption.
+(5) train_val_split.py: split data into train and validation set.
+

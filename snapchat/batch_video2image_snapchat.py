@@ -1,14 +1,14 @@
 import cv2
-import skvideo.io
+#import skvideo.io
 import glob
 import os
 #import os.listdir
-video_dir = '/home/a-linjieyang/work/data/youtube/YouTubeClips/'
-im_dir = '/home/a-linjieyang/work/data/youtube/images/'
-video_names = glob.glob(video_dir+'*.avi')
+video_dir = '/media/researchshare/linjie/data/snapchat/video/'
+im_dir = '/media/researchshare/linjie/data/snapchat/images/'
+video_names = glob.glob(video_dir+'*.mp4')
 print video_names[0]
 for path in video_names:
-	vc = skvideo.io.VideoCapture(path)
+	vc = cv2.VideoCapture(path)
 
 	c=1
 
@@ -22,7 +22,7 @@ for path in video_names:
 			#if (type(frame) == type(None)):
 			if not rval:
 				break
-			cv2.imwrite(fd_name + '/' + str(c) + '.jpg',frame)
+			cv2.imwrite('%s/%06d.jpg' % (fd_name, c),frame)
 			#print str(c) + '.jpg'
 			c = c + 1
 			#cv2.waitKey(1)

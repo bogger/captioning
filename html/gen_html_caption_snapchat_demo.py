@@ -20,8 +20,8 @@ def gen_html(argv):
 	#random.seed(100)
 	csv_path = 'caption_quality.csv'
 	row_from = 1
-	pos_col = 4
-	neg_col = 5
+	pos_col = 0
+	neg_col = 1
 	item_line = 6
 	with open(csv_path,'rU') as f:
 		reader = csv.reader(f)
